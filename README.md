@@ -26,7 +26,6 @@ A device can be :
   * Radar
   * ADSB receiver 
 
-
 ###Build
 
 ```bash
