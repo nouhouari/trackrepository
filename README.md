@@ -24,7 +24,14 @@ A local track provider use a device to receive local tracks.
 A device can be :
   * GPS
   * Radar
-  * ADSB receiver 
+  * ADSB receiver
+  
+### Dependencies
+
+A a sample, this project needs some data provided by ADSB exchange website.
+
+You need to compile ADSBServer library available [here](https://github.com/nouhouari/adsbserver)
+   
 
 ### Build
 
