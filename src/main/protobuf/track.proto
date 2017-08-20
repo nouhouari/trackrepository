@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.hin.trackrepository.message;
+option java_multiple_files = true;
+option java_package = "com.hin.trackrepository.message";
+option java_outer_classname = "TrackProtoBuf";
+
+  // Define Track message
+  message TrackMessage {
+    string id = 1;
+    int64 updateDate = 2;    
+    double latitude = 3;
+    double longitude = 4;
+    double altitude = 5;
+    double speed = 6;
+    double heading = 7;
+    map<string, string> extensions = 8;
+  }
