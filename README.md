@@ -34,7 +34,7 @@ mvn clean install
 
 Build the docker image
 ```bash
-mvn package docker:build
+mvn clean package docker:build
 ```
 
 ### Run
