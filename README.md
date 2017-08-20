@@ -1,4 +1,4 @@
-###Track Repository project
+### Track Repository project
 
 This project is a POC (Proof of Concept) for a vehicle tracking system.
 
@@ -26,7 +26,7 @@ A device can be :
   * Radar
   * ADSB receiver 
 
-###Build
+### Build
 
 ```bash
 mvn clean install
@@ -45,6 +45,6 @@ You need Docker and docker-compose to run the sample.
 docker-compose up
 ```
 
-#### License
+### License
 
 MIT
