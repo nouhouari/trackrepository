@@ -22,6 +22,7 @@
  */
 package com.hin.trackrepository.api.client.kafka;
 
+import com.hin.trackrepository.dto.TrackDTO;
 import com.hin.trackrepository.entity.Track;
 import com.hin.trackrepository.message.TrackMessage;
 import com.hin.trackrepository.repository.TrackRepository;
@@ -31,6 +32,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -44,19 +47,39 @@ public class TrackConsumer {
   @Autowired
   private TrackTransformer transformer;
   
+  @Autowired
+  private SimpMessagingTemplate broker;
+  
   @KafkaListener(topics = "${kafka.topic.track}"  )
   private void consume(TrackMessage track){
-    if(LOGGER.isInfoEnabled()){
-      LOGGER.info("received track payload='{}'", track);      
+    if(LOGGER.isDebugEnabled()){
+      LOGGER.debug("received track payload='{}'", track);      
     }
+    // Check if track exists
     Track entity = repository.findByexternalId(track.getId());
     if(entity == null){
+      // Track doesn'exist. Create a new
       entity = new Track();
     }
+    // Filter lat/lon =0
     if(!(track.getLatitude() == 0 && track.getLongitude() == 0)){
+      // Convert Proto to entity
       transformer.convertProtoToEntity(track, entity);
-      repository.save(entity);
+      // Save entity
+      Track savedEntity = repository.save(entity);
+      // Convert to DTO
+      TrackDTO dto = new TrackDTO();
+      transformer.convertEntityToDTO(savedEntity, dto);
+      // Broadcast DTO
+      send(dto);
     }
   }
   
+  /**
+   * Send the DTO message to /topic/track Topic.
+   * @param t Track to broadcast
+   */
+  public void send(TrackDTO dto){
+    broker.convertAndSend("/topic/track", dto);
+  }
 }
