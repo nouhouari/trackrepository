@@ -52,6 +52,14 @@ You need Docker and docker-compose to run the sample.
 docker-compose up
 ```
 
+### Rest API
+
+The tracking system exposes some REST APIs for basic CRUD operations.
+
+![Rest API](images/restApi.png)
+
+More details here : [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
 ### License
 
 MIT
