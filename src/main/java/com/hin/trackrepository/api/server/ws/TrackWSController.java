@@ -10,7 +10,7 @@ import com.hin.trackrepository.dto.TrackDTO;
 @Controller
 public class TrackWSController {
 
-  @MessageMapping("/hello")
+  @MessageMapping("/track")
   @SendTo("/topic/track")
   public TrackDTO greeting(TrackDTO t) throws Exception {
      return t;
