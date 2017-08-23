@@ -52,6 +52,7 @@ public class TrackTransformer {
    */
   public void convertEntityToDTO(Track entity, TrackDTO dto) {
     dto.setAltitude(entity.getAltitude());
+    dto.setExternalId(entity.getExternalId());
     dto.setCreatedDate(entity.getCreatedDate());
     dto.setExtensions(entity.getExtensions());
     if (entity.getGeom() != null) {
@@ -77,6 +78,7 @@ public class TrackTransformer {
         e.printStackTrace();
       }
     }
+    entity.setExternalId(dto.getExternalId());
     entity.setAltitude(dto.getAltitude());
     entity.setCreatedDate(dto.getCreatedDate());
     entity.setExtensions(dto.getExtensions());

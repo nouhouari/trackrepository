@@ -25,6 +25,8 @@ package com.hin.trackrepository.dto;
 import java.util.Date;
 import java.util.HashMap;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 /**
  * @author NourreddineHouari
@@ -32,13 +34,23 @@ import java.util.HashMap;
  */
 public class TrackDTO {
   
+	@JsonProperty("id")
 	private Long id;
+	@JsonProperty("ei")
+	private String externalId;
+	@JsonProperty("geo")
 	private String geom;
+	@JsonProperty("ct")
 	private Date createdDate;
+	@JsonProperty("ut")
 	private Date updateDate;
+	@JsonProperty("sp")
 	private double speed;
+	@JsonProperty("he")
 	private double heading;
+	@JsonProperty("al")
 	private double altitude;
+	@JsonProperty("ex")
 	private HashMap<String, String> extensions;
 
   /**
@@ -56,6 +68,20 @@ public class TrackDTO {
   }
 
   /**
+ * @return the externalId
+ */
+public String getExternalId() {
+	return externalId;
+}
+
+/**
+ * @param externalId the externalId to set
+ */
+public void setExternalId(String externalId) {
+	this.externalId = externalId;
+}
+
+/**
    * @return the geom
    */
   public String getGeom() {

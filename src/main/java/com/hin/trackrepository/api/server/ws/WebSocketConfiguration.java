@@ -39,8 +39,8 @@ public class WebSocketConfiguration extends AbstractWebSocketMessageBrokerConfig
   }
   
   @Override
-  public void registerStompEndpoints(StompEndpointRegistry registry) {
-   registry.addEndpoint("/track");
+  public void registerStompEndpoints(StompEndpointRegistry registry) {	
+   registry.addEndpoint("/ws").setAllowedOrigins("*");
   }
   
 }
