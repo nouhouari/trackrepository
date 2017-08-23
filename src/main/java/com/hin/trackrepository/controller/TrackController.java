@@ -55,7 +55,7 @@ public class TrackController {
 			consumes=MediaType.APPLICATION_JSON_VALUE,
 			method=RequestMethod.POST)
 	@ResponseBody
-	public TrackDTO createEvent(@RequestBody TrackDTO track){
+	public TrackDTO createTrack(@RequestBody TrackDTO track){
 		return trackService.save(track);
 	}
 	
@@ -64,7 +64,7 @@ public class TrackController {
 			produces=MediaType.APPLICATION_JSON_VALUE,
 			method=RequestMethod.PUT)
 	@ResponseBody
-	public TrackDTO updateEvent(@RequestBody TrackDTO track){
+	public TrackDTO updateTrack(@RequestBody TrackDTO track){
 	  TrackDTO dto = trackService.save(track);
 		return dto;
 	}
@@ -72,7 +72,7 @@ public class TrackController {
 	@RequestMapping(path="", 
 			method=RequestMethod.GET)
 	@ResponseBody
-	public ResultPage<TrackDTO> getEventsPage(
+	public ResultPage<TrackDTO> getTracksPage(
 			@RequestParam(name="page", defaultValue="0") Integer page, 
 			@RequestParam(name="size", defaultValue="5") Integer size){
 		return trackService.findAll(page, size);
@@ -82,7 +82,7 @@ public class TrackController {
 			produces = MediaType.APPLICATION_JSON_VALUE,
 			method=RequestMethod.GET)
 	@ResponseBody
-	public TrackDTO findGeomById(@PathVariable("id") Long id){
+	public TrackDTO findTrackById(@PathVariable("id") Long id){
 		if(LOGGER.isInfoEnabled()){
 			LOGGER.info("Find track by id : " + id);
 		}
@@ -93,7 +93,7 @@ public class TrackController {
 			produces = MediaType.APPLICATION_JSON_VALUE,
 			method=RequestMethod.DELETE)
 	@ResponseBody
-	public void delete(@PathVariable("id") Long id){
+	public void deleteTrack(@PathVariable("id") Long id){
 		if(LOGGER.isInfoEnabled()){
 			LOGGER.info("Delete track by id : " + id);
 		}
