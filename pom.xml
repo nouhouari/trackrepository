@@ -10,7 +10,7 @@
 		<relativePath />
 	</parent>
 
-	<groupId>com.hin.geo</groupId>
+	<groupId>com.hin</groupId>
 	<artifactId>trackrepository</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
