@@ -62,7 +62,10 @@ public class Track implements Serializable{
 	
 	@Basic
 	private String externalId;
-
+	
+	@Basic
+	private String layer;
+	
 	@Type(type = "com.vividsolutions.jts.geom.Geometry")
 	private Geometry geom;
 	
@@ -114,6 +117,20 @@ public class Track implements Serializable{
   }
 
   /**
+ * @return the layer
+ */
+public String getLayer() {
+	return layer;
+}
+
+/**
+ * @param layer the layer to set
+ */
+public void setLayer(String layer) {
+	this.layer = layer;
+}
+
+/**
    * @return the geom
    */
   public Geometry getGeom() {

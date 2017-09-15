@@ -15,4 +15,5 @@ option java_outer_classname = "TrackProtoBuf";
     double speed = 6;
     double heading = 7;
     map<string, string> extensions = 8;
+    string layer = 9;
   }

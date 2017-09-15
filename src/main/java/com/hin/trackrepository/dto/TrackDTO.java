@@ -38,8 +38,10 @@ public class TrackDTO {
 	private Long id;
 	@JsonProperty("ei")
 	private String externalId;
+	@JsonProperty("la")
+	private String layer;
 	@JsonProperty("geo")
-	private String geom;
+	private double[] geom;
 	@JsonProperty("ct")
 	private Date createdDate;
 	@JsonProperty("ut")
@@ -82,16 +84,30 @@ public void setExternalId(String externalId) {
 }
 
 /**
+ * @return the layer
+ */
+public String getLayer() {
+	return layer;
+}
+
+/**
+ * @param layer the layer to set
+ */
+public void setLayer(String layer) {
+	this.layer = layer;
+}
+
+/**
    * @return the geom
    */
-  public String getGeom() {
+  public double[] getGeom() {
     return geom;
   }
 
   /**
    * @param geom the geom to set
    */
-  public void setGeom(String geom) {
+  public void setGeom(double[] geom) {
     this.geom = geom;
   }
 

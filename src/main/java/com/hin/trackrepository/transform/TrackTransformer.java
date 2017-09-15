@@ -56,9 +56,10 @@ public class TrackTransformer {
     dto.setCreatedDate(entity.getCreatedDate());
     dto.setExtensions(entity.getExtensions());
     if (entity.getGeom() != null) {
-      dto.setGeom(entity.getGeom().toText());
+      dto.setGeom(new double[]{entity.getGeom().getCoordinate().y,entity.getGeom().getCoordinate().x});
     }
     dto.setHeading(entity.getHeading());
+    dto.setLayer(entity.getLayer());
     dto.setId(entity.getId());
     dto.setSpeed(entity.getSpeed());
     dto.setUpdateDate(entity.getUpdateDate());
@@ -73,7 +74,7 @@ public class TrackTransformer {
   public void convertDTOToEntity(TrackDTO dto, Track entity) {
     if (dto.getGeom() != null) {
       try {
-        entity.setGeom(wkt.read(dto.getGeom()));
+        entity.setGeom(wkt.read("POINT("+dto.getGeom()[0]+"," +dto.getGeom()[1]+")"));
       } catch (ParseException e) {
         e.printStackTrace();
       }
@@ -86,6 +87,7 @@ public class TrackTransformer {
     entity.setId(dto.getId());
     entity.setSpeed(dto.getSpeed());
     entity.setUpdateDate(dto.getUpdateDate());
+    entity.setLayer(dto.getLayer());
   }
 
   public void convertProtoToEntity(TrackMessage message, Track entity) {
