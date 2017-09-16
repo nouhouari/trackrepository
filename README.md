@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/nouhouari/adsbserver/tree/master.svg?style=svg)](https://circleci.com/gh/nouhouari/adsbserver/tree/master)
+
 ### Track Repository project
 
 This project is a POC (Proof of Concept) for a vehicle tracking system.
