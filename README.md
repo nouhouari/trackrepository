@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/nouhouari/adsbserver/tree/master.svg?style=svg)](https://circleci.com/gh/nouhouari/adsbserver/tree/master)
+[![CircleCI](https://circleci.com/gh/nouhouari/adsbserver/tree/master.svg?style=shield)](https://circleci.com/gh/nouhouari/adsbserver/tree/master)
 
 ### Track Repository project
 
