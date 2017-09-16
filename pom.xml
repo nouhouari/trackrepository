@@ -172,6 +172,7 @@
 			</plugin>
 
 		</plugins>
+
 	</build>
 
 	<distributionManagement>
@@ -193,4 +194,18 @@
 		<system>cicleci</system>
 		<url>https://circleci.com/gh/nouhouari/adsbserver</url>
 	</ciManagement>
+
+	<repositories>
+		<repository>
+			<id>oss.snapshots</id>
+			<name>OSS Sonatype Snapshot Repository</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 </project>
