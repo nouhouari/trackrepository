@@ -1,4 +1,5 @@
-[![CircleCI](https://circleci.com/gh/nouhouari/adsbserver/tree/master.svg?style=shield)](https://circleci.com/gh/nouhouari/adsbserver/tree/master)
+[![CircleCI](https://circleci.com/gh/nouhouari/adsbserver/tree/master.svg?style=shield&circle-token=61e7f8d1d2eb2b69170d6ff4c2f9a43ec9a32797)](https://circleci.com/gh/nouhouari/adsbserver/tree/master)
+[![CircleCI](https://circleci.com/gh/nouhouari/trackrepository/tree/master.svg?style=svg&circle-token=61e7f8d1d2eb2b69170d6ff4c2f9a43ec9a32797)](https://circleci.com/gh/nouhouari/trackrepository/tree/master)
 
 ### Track Repository project
 
