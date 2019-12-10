@@ -1,22 +1,3 @@
-/*
- * 
- * SICPA CONFIDENTIAL
- * 
- * All information contained herein is, and remains
- * the property of SICPA and its suppliers,
- * if any.  The intellectual and technical concepts contained
- * herein are proprietary to SICPA
- * and its suppliers and may be covered by U.S. and Foreign Patents,
- * patents in process, and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material
- * is strictly forbidden unless prior written permission is obtained
- * from SICPA.
- * 
- * [2017] SICPA SA
- * All Rights Reserved.
- */
-
-package com.hin.trackrepository.api.client.kafka;
 /* 
  * Copyright (c) 2017 Nourreddine HOUARI (houarinourredine@gmail.com)
  * 
@@ -39,6 +20,9 @@ package com.hin.trackrepository.api.client.kafka;
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+
+package com.hin.trackrepository.api.client.kafka;
+
 import com.hin.trackrepository.message.TrackMessage;
 import com.hin.trackrepository.serializer.TrackSerializer;
 
